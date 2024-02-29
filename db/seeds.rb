@@ -7,3 +7,18 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require 'faker'
+
+puts 'Creating 10 movies....'
+
+10.times do
+  movie = Movie.new(
+    title: Faker::Movie.title,
+    overview: Faker::Lorem.sentence(word_count: 10),
+    poster_url: Faker::Internet.url,
+    rating: Faker::Number.between(from: 1, to: 10).to_f.round(1)
+  )
+  movie.save
+end
+
+puts 'Finished!'
