@@ -9,9 +9,9 @@
 #   end
 require 'faker'
 
-puts 'Creating 10 movies....'
+puts 'Creating movies....'
 
-10.times do
+30.times do
   movie = Movie.new(
     title: Faker::Movie.title,
     overview: Faker::Lorem.sentence(word_count: 10),

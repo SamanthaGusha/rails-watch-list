@@ -5,7 +5,7 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
-    @movies = @list.movies # finding movies asssociated with the lists
+    # @movies = @list.movies # finding movies asssociated with the lists
   end
 
   def new
@@ -18,13 +18,6 @@ class ListsController < ApplicationController
 
     redirect_to list_path(@list)
   end
-
-  # @list = List.new(list_params)
-  #   if @list.save
-  #     redirect_to list_path(@list)
-  #   else
-  #     render :new, status: :unprocessable_entity
-  #   end
 
   private
 

@@ -12,4 +12,5 @@ Rails.application.routes.draw do
     resources :bookmarks
     resources :movies
   end
+  resources :bookmarks, only: %i[destroy]
 end
